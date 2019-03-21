@@ -3,9 +3,9 @@ function ccvs(nd1,nd2,ni1,ni2,val)
 %   ni1 -------o            |----------o nd1
 %              |            |
 %              |           /+\
-%            I |        | /   \    Vnd1 - Vnd2 = val*(Vni1 - Vni2)
-%              |  Ivcvs | \   /
-%              |        V  \-/ 
+%          Ii| |          /   \    Vni1 - Vni2 = val*(Ii)
+%            | |          \   /
+%           \ /|           \-/ 
 %              |            |
 %   ni2 -------o            |----------o nd2
 global G C b;
@@ -36,5 +36,5 @@ if (ni2 ~= 0)
     G(ni2,xr2) = -1;
     G(xr2,ni2) = -1;
 end
-G(xr1,xr1) = -val;
+G(xr2,xr1) = -val;
 %END
